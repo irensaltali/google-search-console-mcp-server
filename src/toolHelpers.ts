@@ -27,7 +27,7 @@ export function errorResult(message: string): ToolResult {
 }
 
 export function connectionUrl(ctx: ToolContext): string {
-  const url = new URL("/auth/google/start", ctx.config.SUPABASE_URL);
+  const url = new URL("/auth/google/start", ctx.config.PUBLIC_BASE_URL);
   if (ctx.subscriberId) {
     url.searchParams.set("subscriber_id", ctx.subscriberId);
   }

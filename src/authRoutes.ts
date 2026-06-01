@@ -26,7 +26,7 @@ export function createAuthRouter(config: AppConfig, accountStore: AccountStore):
     }
 
     const state = createOAuthState(subscriberId, config.OAUTH_STATE_SECRET);
-    const redirectTo = new URL("/auth/google/complete", config.SUPABASE_URL);
+    const redirectTo = new URL("/auth/google/complete", config.PUBLIC_BASE_URL);
     redirectTo.searchParams.set("state", state);
 
     const supabase = createSupabasePublic(config);
