@@ -1,9 +1,13 @@
+# MCPize Configuration
+# Docs: https://mcpize.com/docs/mcpize-yaml
+
 version: 1
-name: google-search-console-mcp-server
+
+name: "google-search-console-mcp-server"
+slug: "google-search-console-mcp-server"
+
 runtime: typescript
-description: Google Search Console MCP server with OAuth, analytics, URL inspection, sitemap, and property admin tools.
-startCommand:
+
+start:
   type: http
-  command: npm start
-healthCheck:
-  path: /healthz
+  command: "npm start"
