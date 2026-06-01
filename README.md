@@ -1,4 +1,4 @@
-# Google Search Console MCP Server
+# Google Search Console MCP Server 
 
 [![MCPize](https://mcpize.com/badge/@iren/google-search-console-mcp-server)](https://mcpize.com/mcp/google-search-console-mcp-server)
 
