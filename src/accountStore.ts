@@ -21,10 +21,13 @@ type AccountRow = {
 };
 
 export class AccountStore {
-  constructor(
-    private readonly supabase: SupabaseClient,
-    private readonly config: AppConfig
-  ) {}
+  private readonly supabase: SupabaseClient;
+  private readonly config: AppConfig;
+
+  constructor(supabase: SupabaseClient, config: AppConfig) {
+    this.supabase = supabase;
+    this.config = config;
+  }
 
   async upsertAccount(account: GoogleAccount): Promise<void> {
     const encryptedRefreshToken = encryptText(
