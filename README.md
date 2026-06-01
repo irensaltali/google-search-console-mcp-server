@@ -1,6 +1,18 @@
 # Google Search Console MCP Server
 
+[![MCPize](https://mcpize.com/badge/@iren/google-search-console-mcp-server)](https://mcpize.com/mcp/google-search-console-mcp-server)
+
 Remote MCP server for Google Search Console, designed for MCPize deployment and monetization.
+
+## Connect via MCPize
+
+Use this MCP server instantly with no local installation:
+
+```bash
+npx -y mcpize connect @iren/google-search-console-mcp-server --client claude
+```
+
+Or connect at: **https://mcpize.com/mcp/google-search-console-mcp-server**
 
 ## Features
 
@@ -92,4 +104,3 @@ The runtime start command is `npm start`.
 npm test
 npm run typecheck
 npm run build
-```
