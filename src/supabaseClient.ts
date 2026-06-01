@@ -2,7 +2,7 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import type { AppConfig } from "./config.js";
 
 export function createSupabaseAdmin(config: AppConfig): SupabaseClient {
-  return createClient(config.SUPABASE_URL, config.SUPABASE_SECRET_KEY ?? config.SUPABASE_SERVICE_ROLE_KEY!, {
+  return createClient(config.SUPABASE_URL, config.SUPABASE_SECRET_KEY, {
     auth: {
       persistSession: false,
       autoRefreshToken: false

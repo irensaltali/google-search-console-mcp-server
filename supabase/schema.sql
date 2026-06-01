@@ -43,5 +43,5 @@ create policy "No client access to mutation audit logs"
   using (false)
   with check (false);
 
--- This server uses the Supabase service-role key for backend-only access.
+-- This server uses the Supabase secret key for backend-only access.
 -- Do not expose these tables directly to browser clients.

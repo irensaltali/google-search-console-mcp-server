@@ -98,6 +98,8 @@ npm run build
 
 The runtime start command is `npm start`.
 
+This repo includes a `Dockerfile` because MCPize's TypeScript auto-detection may otherwise try to run `src/index.ts` directly. The Dockerfile builds TypeScript first and starts `dist/index.js`, which is required for Cloud Run.
+
 ## Tests
 
 ```bash
