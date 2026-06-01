@@ -10,14 +10,21 @@ export function createHttpApp(config: AppConfig, accountStore: AccountStore) {
   const app = express();
 
   app.get("/", (_req, res) => {
+    const mcpEndpoint = new URL(DEFAULT_MCP_PATH, config.PUBLIC_BASE_URL).toString();
+
     res.json({
       name: "google-search-console-mcp-server",
       status: "ok",
-      mcp: DEFAULT_MCP_PATH
+      mcp: DEFAULT_MCP_PATH,
+      mcpEndpoint
     });
   });
 
   app.get("/healthz", (_req, res) => {
+    res.json({ ok: true });
+  });
+
+  app.get("/ping", (_req, res) => {
     res.json({ ok: true });
   });
 

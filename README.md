@@ -68,6 +68,12 @@ Health check:
 GET /healthz
 ```
 
+MCPize dashboard health checks can also use:
+
+```text
+GET /ping
+```
+
 OAuth start URL:
 
 ```text
@@ -89,6 +95,20 @@ For local/developer testing, use this subscriber header value:
 ```text
 x-mcpize-user-id: d206a003-8073-48db-aee3-84ae53104f99
 ```
+
+Set the MCPize dashboard Endpoint URL to the deployed server base URL:
+
+```text
+https://google-search-console-mcp-server.mcpize.run
+```
+
+The MCP transport path is `/mcp`, so discovery should initialize against:
+
+```text
+https://google-search-console-mcp-server.mcpize.run/mcp
+```
+
+If MCPize asks for the base/server URL, use the first URL. If it asks for the full MCP endpoint URL, use the second URL.
 
 Deployment is expected to run automatically from GitHub `main`. The deploy build command should be:
 
