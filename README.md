@@ -63,18 +63,36 @@ It is built for technical SEO, growth, content, and engineering teams that want 
 
 1. Enable the Google Search Console API in Google Cloud.
 2. Configure the Google OAuth web client in Supabase Auth.
-3. Add this authorized redirect URI in Google Cloud:
+3. Use this Google OAuth web client:
 
    ```text
+   219391673793-bd9k06kvocj4i5i4820srffv7s838arm.apps.googleusercontent.com
+   ```
+
+4. Add these authorized redirect URIs in Google Cloud:
+
+   ```text
+   https://google-search-console-mcp-server.irensaltali.com
+   https://google-search-console-mcp-server.irensaltali.com/auth/google/complete
    https://bbihthevyhrjemiwqzwh.supabase.co/auth/v1/callback
    ```
 
-4. Apply the SQL in [`supabase/schema.sql`](supabase/schema.sql).
-5. Copy `.env.example` to `.env` and fill server-only secrets:
+5. Add these authorized JavaScript origins in Google Cloud:
+
+   ```text
+   https://google-search-console-mcp-server.irensaltali.com
+   https://bbihthevyhrjemiwqzwh.supabase.co
+   ```
+
+6. Apply the SQL in [`supabase/schema.sql`](supabase/schema.sql).
+7. Copy `.env.example` to `.env` and fill server-only secrets:
    - `SUPABASE_SECRET_KEY`
+   - `GOOGLE_CLIENT_ID`
    - `GOOGLE_CLIENT_SECRET`
    - `TOKEN_ENCRYPTION_KEY`
    - `OAUTH_STATE_SECRET`
+
+Do not commit the Google client secret. Keep it only in runtime secrets or ignored local env files.
 
 Generate secrets with:
 
