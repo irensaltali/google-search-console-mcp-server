@@ -1,8 +1,8 @@
-# Google Search Console MCP Server 
+# Google Search Console MCP Server
 
 [![MCPize](https://mcpize.com/badge/@iren/google-search-console-mcp-server)](https://mcpize.com/mcp/google-search-console-mcp-server)
 
-Remote MCP server for Google Search Console, designed for MCPize deployment and monetization.
+Google Search Console MCP server for SEO analytics, URL inspection, sitemap management, and property administration through secure OAuth.
 
 ## Connect via MCPize
 
@@ -14,17 +14,43 @@ npx -y mcpize connect @iren/google-search-console-mcp-server --client claude
 
 Or connect at: **https://mcpize.com/mcp/google-search-console-mcp-server**
 
-## Features
+## Overview
 
-- Supabase Auth Google OAuth connection flow.
-- Encrypted per-subscriber Google refresh-token storage in Supabase.
-- Full Search Console admin/read tool surface:
-  - properties
-  - search analytics
-  - URL inspection
-  - sitemaps
-- Confirm guards for destructive delete tools.
-- Mutation audit logs for write/delete actions.
+This remote MCP server gives AI clients direct access to Google Search Console without requiring local server setup. After a one-time Google OAuth connection, agents can inspect index coverage, query search performance, manage sitemap submissions, and administer Search Console properties from the same workflow.
+
+It is built for technical SEO, growth, content, and engineering teams that want Search Console data and actions available inside MCP-native tools such as Codex and Claude Code.
+
+## Key Capabilities
+
+- Google OAuth account connection with encrypted per-subscriber token storage.
+- Search Analytics reporting for clicks, impressions, CTR, position, and dimension-based breakdowns.
+- URL Inspection checks for index status, crawl state, and page-specific issues.
+- Search Console property operations including list, get, add, and delete.
+- Sitemap operations including list, get, submit, and delete.
+- Confirmation guards for destructive tools and audit logging for mutations.
+
+## Included Tools
+
+- `connect_google_account`
+- `get_connection_status`
+- `disconnect_google_account`
+- `list_sites`
+- `get_site`
+- `add_site`
+- `delete_site`
+- `query_search_analytics`
+- `inspect_url`
+- `list_sitemaps`
+- `get_sitemap`
+- `submit_sitemap`
+- `delete_sitemap`
+
+## Use Cases
+
+- Pull Search Console performance data into agent workflows for SEO reporting and content prioritization.
+- Check whether specific URLs are indexed and diagnose crawl or coverage problems without leaving the coding client.
+- Submit or clean up sitemaps during deployments, migrations, or recovery workflows.
+- Manage Search Console properties programmatically for multi-site teams and internal tools.
 
 ## Required Setup
 

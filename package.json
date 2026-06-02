@@ -1,7 +1,7 @@
 {
   "name": "google-search-console-mcp-server",
   "version": "0.1.0",
-  "description": "MCP server for Google Search Console with Supabase Auth and MCPize-ready HTTP transport.",
+  "description": "Google Search Console MCP server for SEO analytics, URL inspection, sitemap management, and property administration.",
   "type": "module",
   "private": true,
   "engines": {
