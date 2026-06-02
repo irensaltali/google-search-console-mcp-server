@@ -26,6 +26,32 @@ export function errorResult(message: string): ToolResult {
   };
 }
 
+export function shouldSuggestReauth(message: string): boolean {
+  const normalized = message.toLowerCase();
+  return [
+    "unauthorized_client",
+    "invalid_client",
+    "invalid_grant",
+    "access_denied",
+    "invalid_request",
+    "insufficientpermissions",
+    "insufficient authentication scopes",
+    "insufficient permissions",
+    "authentication scopes",
+    "token has been expired or revoked",
+    "reauth",
+    "re-auth"
+  ].some((token) => normalized.includes(token));
+}
+
+export function formatGoogleError(message: string, ctx: ToolContext): string {
+  if (!ctx.subscriberId || !shouldSuggestReauth(message)) {
+    return message;
+  }
+
+  return `${message}\n\nOpen this URL to reconnect Google Search Console: ${connectionUrl(ctx)}`;
+}
+
 export function connectionUrl(ctx: ToolContext): string {
   const url = new URL("/auth/google/start", ctx.config.PUBLIC_BASE_URL);
   if (ctx.subscriberId) {
@@ -51,6 +77,7 @@ export async function withGoogleClient<T>(
     const client = new GoogleSearchConsoleClient(ctx.config, account.providerRefreshToken);
     return jsonResult(await action(client, ctx.subscriberId));
   } catch (error) {
-    return errorResult(normalizeGoogleError(error).message);
+    const message = normalizeGoogleError(error).message;
+    return errorResult(formatGoogleError(message, ctx));
   }
 }
