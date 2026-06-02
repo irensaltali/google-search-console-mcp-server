@@ -47,6 +47,12 @@ It is built for SEO, growth, content, and engineering teams that want live Searc
 - `submit_sitemap`
 - `delete_sitemap`
 
+## Included Prompts
+- `debug_indexing_issue`
+- `summarize_search_performance`
+- `find_ctr_opportunities`
+- `review_sitemap_health`
+
 ## Website
 
 https://google-search-console-mcp-server.irensaltali.com

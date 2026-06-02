@@ -45,6 +45,13 @@ It is built for technical SEO, growth, content, and engineering teams that want 
 - `submit_sitemap`
 - `delete_sitemap`
 
+## Included Prompts
+
+- `debug_indexing_issue`
+- `summarize_search_performance`
+- `find_ctr_opportunities`
+- `review_sitemap_health`
+
 ## Use Cases
 
 - Pull Search Console performance data into agent workflows for SEO reporting and content prioritization.
